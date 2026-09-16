@@ -1,0 +1,24 @@
+:root{--ink:#080808}
+body,main,.menu-shell,.menu-view{background-color:#080808}
+.hero{background-color:#080808;isolation:isolate}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(0deg,#080808,transparent 30%)}
+.menu-panel{background:#080808;isolation:isolate;border-color:#ffffff12}
+.menu-panel:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-position:right center;background-repeat:no-repeat;background-size:cover;opacity:.4;mask-image:linear-gradient(90deg,transparent,#000 60%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 60%)}
+.featured:before{background-image:url('crepe-bg.webp')}
+[data-section="beverages"] .menu-panel:before{background-image:url('drinks-bg.webp');opacity:.35}
+.icecream-panel:before{background-image:url('icecream-bg.webp');opacity:.32}
+.shisha-panel:before{background-image:url('shisha-bg.webp');opacity:.4}
+.shisha-panel{background:#080808}
+.shisha-panel:before,.icecream-panel:before,[data-section="beverages"] .menu-panel:before{background-size:auto 100%;background-position:right center}
+.item span,.item b,.panel-title,.flavors,.big-price{text-shadow:0 2px 8px #000}
+.extras{background:#080808a8}.flavors>span{background:#080808aa;backdrop-filter:blur(5px)}
+.minimal-footer{background:#080808;padding-top:16px;padding-bottom:24px;text-align:center}
+.contact-page{min-height:100svh;background:#080808}
+.contact-header{height:100px}.contact-header .topbar{position:relative;left:auto;right:auto;margin:0 auto;max-width:1132px;width:calc(100% - 40px)}
+.contact-main{max-width:1000px;margin:0 auto;padding:70px 24px}
+.contact-main #contact{background:#080808;padding:0}
+.contact-main .footer-brand{padding:20px 0 32px}.contact-main .contact-cards{grid-template-columns:1fr 1fr}
+.contact-main .contact-card{flex-direction:column;align-items:flex-start;gap:24px;padding:28px}
+.contact-main .contact-card>strong{font-size:25px}.contact-main .contact-card a{font-size:13px}
+.category-icon .icon{width:25px;height:25px}
+@media(max-width:760px){.menu-panel:before{background-position:75% center;opacity:.28;mask-image:linear-gradient(90deg,transparent,#000);-webkit-mask-image:linear-gradient(90deg,transparent,#000)}.contact-main{padding:36px 20px}.contact-main .contact-cards{grid-template-columns:1fr}.contact-main .footer-brand{align-items:center}.contact-main .footer-brand h2{font-size:25px}.contact-header .contact-link{font-size:11px}.contact-main .contact-card>strong{font-size:22px}.category-icon .icon{width:23px;height:23px}}
