@@ -17,17 +17,18 @@ body{min-height:100svh;padding-bottom:var(--safe-bottom)}
 .view-title{scroll-margin-top:calc(var(--safe-top) + 105px)}
 @media(max-width:760px){
   .topbar{left:max(20px,var(--safe-left));right:max(20px,var(--safe-right))}
-  /* Mobile hero: keep the food image present through the full intro/CTA area, then fade smoothly into black. */
+  /* iPhone hero: show the full-width composition without cover-zoom, keep copy close to the header, and fade only the bottom into black. */
   .hero{
-    min-height:calc(700px + var(--safe-top));
-    height:88svh;
-    padding-top:calc(84px + var(--safe-top));
-    padding-bottom:75px;
-    align-items:flex-end;
+    min-height:calc(680px + var(--safe-top));
+    height:auto;
+    padding-top:calc(122px + var(--safe-top));
+    padding-bottom:90px;
+    align-items:flex-start;
+    background-color:#080808;
     background-image:
-      linear-gradient(180deg,rgba(8,8,8,.06) 0%,rgba(8,8,8,.10) 42%,rgba(8,8,8,.36) 72%,#080808 100%),
+      linear-gradient(180deg,rgba(8,8,8,.03) 0%,rgba(8,8,8,.05) 68%,rgba(8,8,8,.32) 84%,#080808 100%),
       url('hero-food.webp');
-    background-size:100% 100%,cover;
+    background-size:100% 100%,100% 100%;
     background-position:center,center top;
     background-repeat:no-repeat,no-repeat;
   }
