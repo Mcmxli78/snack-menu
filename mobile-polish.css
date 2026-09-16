@@ -18,6 +18,7 @@ body{min-height:100svh;padding-bottom:var(--safe-bottom)}
 @media(max-width:760px){
   .topbar{left:max(20px,var(--safe-left));right:max(20px,var(--safe-right))}
   /* Keep the original mobile hero from styles.css: photo behind the entire hero, text layered on top, natural bottom fade. */
+  .hero-copy{transform:translateY(-18px)}
   .category-dock .category-grid{width:100%}
   .category-dock .category strong{font-size:11px}
   .menu-panel.featured:before,.menu-panel.saj-panel:before,.menu-panel.icecream-panel:before,[data-section="beverages"] .menu-panel:before,.menu-panel.shisha-panel:before{
