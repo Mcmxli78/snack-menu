@@ -17,7 +17,8 @@ body{min-height:100svh;padding-bottom:var(--safe-bottom)}
 .view-title{scroll-margin-top:calc(var(--safe-top) + 105px)}
 @media(max-width:760px){
   .topbar{left:max(20px,var(--safe-left));right:max(20px,var(--safe-right))}
-  .hero{min-height:calc(490px + var(--safe-top));padding-top:calc(84px + var(--safe-top));background-size:auto,contain;background-position:center,center top;background-repeat:no-repeat}
+  /* iPhone: fit the full hero food photo instead of cropping it like cover. */
+  .hero{min-height:calc(490px + var(--safe-top));padding-top:calc(84px + var(--safe-top));background-image:linear-gradient(180deg,#08080810 0%,#08080838 42%,#080808 86%),url('hero-food.webp');background-size:100% 100%,100% auto;background-position:center,center top;background-repeat:no-repeat,no-repeat}
   .hero-copy{margin-top:20px}
   .category-dock .category-grid{width:100%}
   .category-dock .category strong{font-size:11px}
