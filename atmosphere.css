@@ -5,7 +5,7 @@ body,main,.menu-shell,.menu-view{background-color:#080808}
 .menu-panel{background:#080808;isolation:isolate;border-color:#ffffff12}
 .menu-panel:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-position:right center;background-repeat:no-repeat;background-size:cover;opacity:.4;mask-image:linear-gradient(90deg,transparent,#000 60%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 60%)}
 .featured:before{background-image:url('crepe-vanilla-bg.webp')}
-.saj-panel:before{background-image:url('saj-tomato-bg.webp');background-size:auto 100%;background-position:right center;opacity:.34}
+.saj-panel:before{background-image:url('saj-parallel-tomato-bg.webp');background-size:auto 100%;background-position:right center;opacity:.34}
 [data-section="beverages"] .menu-panel:before{background-image:url('drinks-bg.webp');opacity:.35}
 .icecream-panel:before{background-image:url('icecream-bg.webp');opacity:.32}
 .shisha-panel:before{background-image:url('shisha-bg.webp');opacity:.4}
