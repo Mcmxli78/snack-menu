@@ -17,22 +17,7 @@ body{min-height:100svh;padding-bottom:var(--safe-bottom)}
 .view-title{scroll-margin-top:calc(var(--safe-top) + 105px)}
 @media(max-width:760px){
   .topbar{left:max(20px,var(--safe-left));right:max(20px,var(--safe-right))}
-  .hero{
-    min-height:0;
-    height:auto;
-    padding-top:calc(108px + var(--safe-top));
-    padding-bottom:18px;
-    align-items:flex-start;
-    background-color:#080808;
-    background-image:
-      linear-gradient(180deg,rgba(8,8,8,.03) 0%,rgba(8,8,8,.06) 58%,rgba(8,8,8,.35) 80%,#080808 100%),
-      url('hero-food.webp');
-    background-size:100% 100%,contain;
-    background-position:center,center top;
-    background-repeat:no-repeat,no-repeat;
-  }
-  .hero-copy{margin:0;position:relative;z-index:1}
-  .menu-shell{padding-top:18px}
+  /* Keep the original mobile hero from styles.css: photo behind the entire hero, text layered on top, natural bottom fade. */
   .category-dock .category-grid{width:100%}
   .category-dock .category strong{font-size:11px}
   .menu-panel.featured:before,.menu-panel.saj-panel:before,.menu-panel.icecream-panel:before,[data-section="beverages"] .menu-panel:before,.menu-panel.shisha-panel:before{
