@@ -17,9 +17,21 @@ body{min-height:100svh;padding-bottom:var(--safe-bottom)}
 .view-title{scroll-margin-top:calc(var(--safe-top) + 105px)}
 @media(max-width:760px){
   .topbar{left:max(20px,var(--safe-left));right:max(20px,var(--safe-right))}
-  /* iPhone: fit the full hero food photo instead of cropping it like cover. */
-  .hero{min-height:calc(490px + var(--safe-top));padding-top:calc(84px + var(--safe-top));background-image:linear-gradient(180deg,#08080810 0%,#08080838 42%,#080808 86%),url('hero-food.webp');background-size:100% 100%,100% auto;background-position:center,center top;background-repeat:no-repeat,no-repeat}
-  .hero-copy{margin-top:20px}
+  /* Mobile hero: keep the food image present through the full intro/CTA area, then fade smoothly into black. */
+  .hero{
+    min-height:calc(700px + var(--safe-top));
+    height:88svh;
+    padding-top:calc(84px + var(--safe-top));
+    padding-bottom:75px;
+    align-items:flex-end;
+    background-image:
+      linear-gradient(180deg,rgba(8,8,8,.06) 0%,rgba(8,8,8,.10) 42%,rgba(8,8,8,.36) 72%,#080808 100%),
+      url('hero-food.webp');
+    background-size:100% 100%,cover;
+    background-position:center,center top;
+    background-repeat:no-repeat,no-repeat;
+  }
+  .hero-copy{margin:0;position:relative;z-index:1}
   .category-dock .category-grid{width:100%}
   .category-dock .category strong{font-size:11px}
   /* Contain the complete photographs, never enlarge them to crop to the card. */
