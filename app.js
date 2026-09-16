@@ -22,3 +22,26 @@ buttons.forEach(button=>button.addEventListener('click',()=>showCategory(button.
 addEventListener('hashchange',()=>{if(viewName&&labels[location.hash.slice(1)])showCategory(location.hash.slice(1))});
 if(viewName)showCategory(location.hash.slice(1)||'all');
 const year=document.querySelector('#year');if(year)year.textContent=new Date().getFullYear();
+
+// A stable sticky slot avoids scroll jumps while the glass bar contracts.
+const categoryBar=document.querySelector('.category-grid');
+if(categoryBar){
+  const anchor=document.createElement('div');
+  anchor.className='category-anchor';anchor.setAttribute('aria-hidden','true');
+  const dock=document.createElement('div');dock.className='category-dock';
+  categoryBar.before(anchor,dock);dock.append(categoryBar);
+  let pending=false;
+  function updateDock(){
+    pending=false;
+    const top=parseFloat(getComputedStyle(dock).top)||0;
+    const progress=Math.max(0,Math.min(1,(top-anchor.getBoundingClientRect().top)/80));
+    dock.style.setProperty('--dock-progress',progress.toFixed(3));
+    dock.classList.toggle('is-compact',progress>.95);
+  }
+  function scheduleDock(){if(!pending){pending=true;requestAnimationFrame(updateDock)}}
+  addEventListener('scroll',scheduleDock,{passive:true});
+  addEventListener('resize',scheduleDock,{passive:true});
+  addEventListener('pageshow',scheduleDock);
+  document.fonts?.ready.then(scheduleDock);
+  updateDock();
+}

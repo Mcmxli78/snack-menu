@@ -1,0 +1,31 @@
+/* Let backgrounds reach the screen edges; keep controls clear of cutouts. */
+:root{--safe-top:env(safe-area-inset-top,0px);--safe-left:env(safe-area-inset-left,0px);--safe-right:env(safe-area-inset-right,0px);--safe-bottom:env(safe-area-inset-bottom,0px)}
+html{background:#080808;min-height:100%;scroll-padding-top:calc(var(--safe-top) + 110px)}
+body{min-height:100svh;padding-bottom:var(--safe-bottom)}
+.topbar{top:var(--safe-top);left:max(22px,var(--safe-left));right:max(22px,var(--safe-right))}
+.hero{padding-left:max(22px,var(--safe-left));padding-right:max(22px,var(--safe-right))}
+.menu-shell{padding-left:max(16px,var(--safe-left));padding-right:max(16px,var(--safe-right))}
+.contact-header{height:calc(100px + var(--safe-top))}
+.contact-header .topbar{left:auto;right:auto}
+.contact-main{padding-left:max(24px,var(--safe-left));padding-right:max(24px,var(--safe-right))}
+.category-anchor{height:0;pointer-events:none}
+.category-dock{--dock-progress:0;position:sticky;top:calc(var(--safe-top) + 8px);z-index:25;height:94px;pointer-events:none}
+.category-dock .category-grid{position:relative;top:auto;margin:0 auto;padding:4px;pointer-events:auto;min-height:0;width:calc(100% - 30% * var(--dock-progress));border-radius:calc(23px - 7px * var(--dock-progress));box-shadow:inset 0 1px 0 #ffffff0e,0 8px 24px #0004}
+.category-dock .category{height:calc(84px - 40px * var(--dock-progress));min-height:44px;flex-direction:column;gap:calc(8px * (1 - var(--dock-progress)));padding:6px 4px;border-radius:calc(17px - 6px * var(--dock-progress))}
+.category-dock .category strong{font-size:13px;line-height:18px;white-space:nowrap}
+.category-dock .category-icon{height:calc(26px * (1 - var(--dock-progress)));opacity:calc(1 - var(--dock-progress));overflow:hidden;align-items:center;justify-content:center}
+.view-title{scroll-margin-top:calc(var(--safe-top) + 105px)}
+@media(max-width:760px){
+  .topbar{left:max(20px,var(--safe-left));right:max(20px,var(--safe-right))}
+  .hero{min-height:calc(490px + var(--safe-top));padding-top:calc(84px + var(--safe-top));background-size:auto,contain;background-position:center,center top;background-repeat:no-repeat}
+  .hero-copy{margin-top:20px}
+  .category-dock .category-grid{width:100%}
+  .category-dock .category strong{font-size:11px}
+  /* Contain the complete photographs, never enlarge them to crop to the card. */
+  .menu-panel.featured:before,.menu-panel.saj-panel:before,.menu-panel.icecream-panel:before,[data-section="beverages"] .menu-panel:before,.menu-panel.shisha-panel:before{
+    background-size:contain;background-position:right center;background-repeat:no-repeat;
+    mask-image:none;-webkit-mask-image:none;opacity:.36;
+  }
+  .menu-panel.shisha-panel:before{opacity:.3}
+}
+@media(prefers-reduced-motion:reduce){.category-dock *{transition:none!important}}
